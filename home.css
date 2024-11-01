@@ -1,0 +1,73 @@
+/* Remove initial opacity and background color */
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Full height and width of viewport */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background: transparent; /* Ensure the background is transparent */
+}
+
+video {
+    width: 100%;
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Cover the container */
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.4); /* Lighter, transparent background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    width: 80%; /* Increase width for a bigger box */
+    max-width: 800px; /* Maximum width for larger screens */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+}
+
+h1, h2 {
+    color: #fff; /* White text for better contrast */
+}
+
+p {
+    color: #ddd; /* Lighter text color for readability against dark background */
+    line-height: 1.6; /* Improve readability */
+    font-family: 'Georgia', serif; /* Change to a more traditional font */
+    font-size: 1.1rem; /* Adjust font size */
+}
+
+/* Button styles */
+button {
+    background-color: rgba(255, 255, 255, 0.6); /* White with transparency */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners for the button */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1rem; /* Font size for the button */
+    color: #333; /* Dark text color for contrast */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Darker on hover */
+}
+
+/* Social icons */
+.socials {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.icon {
+    width: 40px; /* Adjust icon size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Space between icons */
+}

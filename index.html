@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="video-container">
+        <video src="C:\Users\DR. DILEEP PANDEY\Downloads\Untitled video - Made with Clipchamp (2).mp4" autoplay loop muted>
+            Your browser does not support the video tag.
+        </video>
+        <button class="btn-82" onclick="window.location.href='home.html'"><span>Continue</span></button>
+    </div>
+
+    <script>
+        const video = document.querySelector('video');
+        const continueButton = document.querySelector('.btn-82');
+
+        // Event listener to fade in the button when the video starts playing
+        video.addEventListener('play', () => {
+            continueButton.classList.add('fade-in');
+        });
+
+        // Optionally, add an event listener for when the video is loaded to fade in immediately
+        video.addEventListener('loadeddata', () => {
+            continueButton.classList.add('fade-in');
+        });
+    </script>
+</body>
+</html>

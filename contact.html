@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        /* Background and general styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main container styles */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6); /* Slightly darker for better readability */
+            border-radius: 15px;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 2rem;
+        }
+
+        p {
+            color: #ddd;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Back to Home button */
+        .back-button {
+            position: absolute; /* Position the button */
+            right: 20px; /* Align to the right */
+            top: 20px; /* Align to the top */
+            background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
+            border: 2px solid rgba(255, 255, 255, 0.6); /* White border with transparency */
+            border-radius: 10px; /* Rounded corners for the button */
+            padding: 10px 20px; /* Button padding */
+            font-size: 1rem; /* Font size for the button */
+            color: rgba(255, 255, 255, 1); /* Bright white text for better visibility */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+            font-weight: bold; /* Make the text bold */
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: #ccc; /* Change border color on hover */
+        }
+
+        /* Social icons */
+        .socials {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .icon {
+            width: 40px;
+            height: auto;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video src="C:\Users\DR. DILEEP PANDEY\Downloads\Untitled video - Made with Clipchamp (1).mp4" autoplay loop muted>
+            Your browser does not support the video tag.
+        </video>
+        <div class="container">
+            <button class="back-button" onclick="window.location.href='home.html'">Back to Home</button>
+            <h1>Contact</h1>
+            <p>
+                Feel free to reach out if you’d like to connect, discuss ideas, or just say hello! 
+                I’m always open to chatting about technology, gaming, or any exciting project ideas. I’m always eager to collaborate on exciting projects. If you have an innovative idea or a project in mind, feel free to share it with me! I’m usually available in the evenings and on weekends, so don’t hesitate to drop me a message. I’m always looking to improve, so if you have any feedback on my work or website, I’d greatly appreciate your thoughts. The current time for me is <span id="current-time"></span>.
+            </p>
+            <div class="socials">
+                <a href="https://discord.com/users/anxnyy" target="_blank">
+                    <img src="C:\Users\DR. DILEEP PANDEY\Downloads\discord.png" alt="Discord" class="icon"> 
+                </a>
+                <a href="https://instagram.com/_ayushmxnn" target="_blank">
+                    <img src="C:\Users\DR. DILEEP PANDEY\Downloads\instagram.png" alt="Instagram" class="icon">
+                </a>
+                <a href="mailto:ayushmanpandey376@gmail.com" target="_blank">
+                    <img src="C:\Users\DR. DILEEP PANDEY\Downloads\gmail.png" alt="Gmail" class="icon"> 
+                </a>                
+                <a href="https://linkedin.com/in/ayushman-pandey-me" target="_blank">
+                    <img src="C:\Users\DR. DILEEP PANDEY\Downloads\linkedin.png" alt="LinkedIn" class="icon">
+                </a>
+                <a href="https://github.com/Ayushman-Pandey" target="_blank">
+                    <img src="C:\Users\DR. DILEEP PANDEY\Downloads\logo.png" alt="GitHub" class="icon">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Display the current time and update every minute
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const currentTime = `${hours}:${minutes}`;
+            document.getElementById('current-time').textContent = currentTime;
+        }
+
+        updateTime();
+        setInterval(updateTime, 60000); // Update every minute
+    </script>
+</body>
+</html>

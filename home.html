@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        /* Add loading screen styles */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Match this color with your video background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensure it covers everything */
+        }
+    
+        .loading.hidden {
+            opacity: 0;
+            transition: opacity 0.5s ease; /* Fade out effect */
+            pointer-events: none; /* Prevent interaction */
+        }
+        
+        /* Remove initial opacity and background color */
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Full height and width of viewport */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            background: transparent; /* Ensure the background is transparent */
+        }
+
+        video {
+            width: 100%;
+            height: 100%; /* Full height of the container */
+            object-fit: cover; /* Cover the container */
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.4); /* Lighter, transparent background */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
+            width: 80%; /* Increase width for a bigger box */
+            max-width: 800px; /* Maximum width for larger screens */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+        }
+
+        h1, h2 {
+            color: #fff; /* White text for better contrast */
+        }
+
+        p {
+            color: #ddd; /* Lighter text color for readability against dark background */
+            line-height: 1.6; /* Improve readability */
+            font-family: 'Georgia', serif; /* Change to a more traditional font */
+            font-size: 1.1rem; /* Adjust font size */
+        }
+
+        /* Button styles */
+        button {
+            position: absolute; /* Position the button */
+            right: 20px; /* Align to the right */
+            top: 20px; /* Align to the top */
+            background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
+            border: 2px solid rgba(255, 255, 255, 0.6); /* White border with transparency */
+            border-radius: 10px; /* Rounded corners for the button */
+            padding: 10px 20px; /* Button padding */
+            font-size: 1rem; /* Font size for the button */
+            color: rgba(255, 255, 255, 1); /* Bright white text for better visibility */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+            font-weight: bold; /* Make the text bold */
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+            color: rgba(255, 255, 255, 1); /* Full opacity text on hover */
+        }
+
+        /* Social icons */
+        .socials {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .icon {
+            width: 40px; /* Adjust icon size */
+            height: auto; /* Maintain aspect ratio */
+            margin: 0 10px; /* Space between icons */
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loading">
+        <p>Loading...</p> <!-- You can replace this with a spinner or other content -->
+    </div>
+
+    <div class="video-container">
+        <video src="C:\Users\DR. DILEEP PANDEY\Downloads\Untitled video - Made with Clipchamp (1).mp4" autoplay loop muted>
+            Your browser does not support the video tag.
+        </video>
+        <div class="container">
+            <h1>About Me</h1>
+            <p>Hello! I’m Ayushman, a passionate learner with a keen interest in technology and innovation. I enjoy exploring new ideas and keeping up with the latest trends in the tech world. In my free time, I love playing video games, surfing the web, and experimenting with programming projects. I believe in the power of creativity and strive to make a positive impact through my work.</p>
+            <h2>Hobbies</h2>
+            <p>In my free time, I enjoy playing video games, which allows me to immerse myself in different worlds and challenges. Spending time with friends and family is also important to me, as I cherish the moments we share together. I have a strong passion for programming and love to explore new coding languages and techniques, continually seeking to enhance my skills. Additionally, web development captivates me, as it combines creativity and problem-solving, allowing me to build engaging websites.</p>
+            <h2>Education</h2>
+            <p>I am currently pursuing my intermediate studies with a focus on Physics, Chemistry, and Mathematics (PCM), alongside Computer Science. This combination allows me to explore both the theoretical and practical aspects of technology and engineering. I have a strong interest in furthering my education at a reputable college, where I plan to deepen my knowledge in computer science and its applications. I aim to equip myself with the skills needed to excel in the tech industry and contribute to innovative projects that can positively impact society.</p>
+            <!-- Wrap the Contact Me button with an anchor tag pointing to contact.html -->
+            <a href="contact.html" target="_self">
+                <button>Contact Me</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Adds a 'loaded' class to the body once the page has fully loaded
+        window.addEventListener('load', () => {
+            // Hide loading screen after the page is fully loaded
+            const loadingScreen = document.getElementById('loading');
+            loadingScreen.classList.add('hidden');
+            // Optional: Remove loading screen after fade out
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500); // Match this duration to the transition duration
+        });
+    </script>
+</body>
+</html>
